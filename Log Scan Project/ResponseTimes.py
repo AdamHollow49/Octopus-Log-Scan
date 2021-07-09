@@ -24,7 +24,6 @@ def find_transactions():
             if line.find('Delete took ') != -1 or line.find('reader took ') != -1:
                 transaction_start = line.find(' took ') - 14
                 transaction_end = line.find('ms in transaction') + 2
-                transaction = str(line[transaction_start:transaction_end])
             else:
                 transaction_start = line.find('query took ') - 13
                 transaction_end = line.find('ms in transaction') + 2
